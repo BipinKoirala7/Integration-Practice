@@ -1,0 +1,705 @@
+body{
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+    text-shadow: 1px 1px 5px black;
+}
+
+p,div,img,span{
+    margin: 0;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 50px rgb(99, 86, 86);
+    border-radius: 5px;
+}
+
+.container{
+    background-size: cover;
+    background-image: url('./rm314-adj-13.jpg') ;
+    height: 100vh;
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1.5fr 5fr 0.6fr;
+    grid-template-areas: 
+    "admin 0 weather"
+    "apps time none"
+    "footer footer footer";
+    box-sizing: border-box;
+}
+
+.personal-info{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    align-items: center;
+    padding: 1.5em;
+    padding-right:1.5em;
+    grid-area: admin;
+}
+
+#admin-img{
+    width: 3em;
+    height: 3.5em;
+    border-radius: 50%;
+}
+
+.admin-name{
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.time-links{
+    grid-area: time;
+    display: grid;
+    max-height: fit-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    color: white;
+}
+
+
+#current-time{
+    text-align: center;
+    font-size: 3.5em;
+    padding-top: 0.6em;
+}
+
+#name{
+    font-family: 'Pacifico', cursive;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.add-links{
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-evenly;
+}
+
+#create-link{
+    color: white;
+}
+
+.add{
+    font-size: 2em;
+    color: white;
+    background-color: grey;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.weather{
+    grid-area:weather;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+.weather-temp{
+    font-size: 3rem;
+    font-weight: 200;
+}
+
+.weather-sign{
+    font-size: 3.5em;
+    font-weight: lighter;
+    color: white;
+    margin: 0;
+}
+
+.place{
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.apps{
+    grid-area:apps;
+    padding: 1em;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#open-apps,#setting{
+    font-size: 2.2em;
+    color: white;
+    height: fit-content;
+    width: fit-content;
+    padding: 0.3em;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#open-apps:hover,#setting:hover{
+    background-color: gray;
+}
+
+.others{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-area: footer;
+    background: rgb(28, 25, 25,0.3);
+}
+
+.extra{
+    border: none;
+    padding: 0.6em 1em;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+    transition: ease-in-out 300ms;
+}
+
+.more{
+    display: flex;
+    align-items: center;
+}
+
+.extra:hover{
+    text-decoration: 2px underline;
+}
+
+.more:hover{
+    text-decoration: none;
+}
+
+/* container shown after click action */
+
+.clickapps{
+    max-height: 30em;
+    display: none;
+    flex-wrap: no-wrap;
+    flex-direction: column;
+    /* background: linear-gradient(to right, #de6262, #ffb88c); */
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    position:fixed;
+    top: 7rem;
+    left: 5rem;
+    border-radius: 5px;
+    font-size: 1em;
+    gap: 10px;
+    text-shadow: none;
+    overflow-y:scroll;
+    padding: .5em;
+}
+
+.clickapps:hover{
+    transition: ease;
+    transition-delay: 50ms;
+    transition-duration: 0.5s;
+}
+
+.app{
+    cursor: pointer;
+    padding: 0.5em 0.5em;
+    display: grid;
+    grid-template-columns: .7fr 2fr;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 5px;
+}
+
+#app-icon{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.weather-sign{
+    color: yellow;
+}
+
+/* settings */
+
+.settings-optn{
+    width: 10em;
+    height: fit-content;
+    max-height: 30em;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 15em;
+    left: 5em;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0.5em;
+}
+
+#mode-selector,.change-admin{
+    border: none;
+    padding: 0.5em 1em;
+    font-family: inherit;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.provide-link{
+    display: none;
+    gap: 10px;
+    padding: 1.5em;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 15em;
+    left: 30em;
+    text-shadow:none;
+    flex-direction: column;
+    gap: 10px;
+    font-size:1.2em;
+}
+
+.link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.link > a{
+    text-decoration: none;
+}
+
+#link-name,#link-url{
+    padding: 0.5em;
+    line-height: 1.1;
+    font-size: large;
+    font-family:inherit;
+    outline: none;
+}
+
+#submit-link{
+    padding: 0.5em;
+    font-family: inherit;
+    font-size: 1em;
+    border: none;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.news-container{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70rem;
+    height: 32rem;
+    background: linear-gradient(to right, #136a8a, #267871);
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 1em;
+}
+
+.title-content,.app-title{
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.news-grid{
+    overflow-y: scroll;
+}
+
+.more-optn{
+    position: fixed;
+    bottom: 3.5em;
+    right: 5em;
+    height: 25em;
+    width:15em;
+    background-color: gray;
+    display: none;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+/* news container */
+
+.news-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
+    /* gap: 1em; */
+}
+
+#news{
+    background-color: black;
+    background-repeat:no-repeat ;
+    background-size:cover ;
+    max-width: 21.5rem;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: flex-end;
+    margin-bottom: 1em;
+    border-radius: 10px;
+    position: relative;
+    transition: ease-in-out .5s;
+    box-sizing: border-box;
+}
+
+#news::after{
+    content: '';
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    height: .5em;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    transition: ease-in 1.5s;
+}
+
+#news:hover{
+    transform: translate(0,10px);
+    cursor: pointer;
+}
+
+#news:hover::after{
+     background: linear-gradient(to right, #d38312, #a83279);
+}
+
+.news-heading{
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    box-sizing: border-box;
+    padding: 1em;
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.news-source{
+    width: fit-content;
+    padding: .5em 1em;
+    margin-bottom: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.news-heading:hover,.news-source:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.news-source:hover{
+    background-color: black;
+    border-radius: 10px;
+}
+
+.news-box-head,.app-box-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+}
+
+#news-box-close,#app-box-close{
+    color: white;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: .1em;
+}
+
+#news-box-close:hover,#app-box-close:hover{
+    background-color: rgb(0, 0, 0,0.4);
+    border-radius: 50%;
+}
+
+/* apps extra design */
+
+/* #instagram-clone:hover{
+    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045)
+}
+
+#basketball-counter:hover{
+    background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+}
+#blackjack:hover{
+    background: linear-gradient(to right, #6441a5, #2a0845);
+}
+#calculator:hover{
+    background: linear-gradient(to right, #43cea2, #185a9d); 
+}
+#chrome-extension:hover{
+    background: linear-gradient(to right, #360033, #0b8793); 
+}
+#color-pallete:hover{
+    background: linear-gradient(to right, #d38312, #a83279);
+}
+#food-ordering-app:hover{
+      background: linear-gradient(to right, #485563, #29323c)}
+#memory-game:hover{
+      background: linear-gradient(to right, #9d50bb, #6e48aa);}
+#menu:hover{
+      background: linear-gradient(to right, #b993d6, #8ca6db);}
+#mylearning-journal:hover{
+    background: linear-gradient(to right, #f0c27b, #4b1248); }
+#movie:hover{
+    background: linear-gradient(to right, #d53369, #cbad6d);}
+#password-generator:hover{ 
+    background: linear-gradient(to right, #fbd3e9, #bb377d);}
+#tindog:hover{
+    background: linear-gradient(to right, #870000, #190a05);}
+#twitter-clone:hover{ 
+    background: linear-gradient(to right, #00c6ff, #0072ff)}
+#unit-converter:hover{
+    background: linear-gradient(to right, #556270, #ff6b6b)}
+#breakout:hover{ 
+    background: linear-gradient(to right, #f2709c, #ff9472);}
+#wizard-game:hover{ 
+    background: linear-gradient(to right, #c21500, #ffc500);} */
+
+/* apps container design */
+.apps-container{
+    position: fixed;
+    width: 70em;
+    height: 35em;
+    background-color: rgb(181, 148, 148);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    color: white;
+    padding: 1em;
+    display: none;
+    flex-direction: column;
+}
+
+.app-render{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* .extra:hover{
+    background: linear-gradient(to right, #7b4397, #dc2430);
+} */
+
+/* utility class */
+
+.display{
+    display: flex;
+}
+
+/* loading Animation */
+/* 
+:root {
+    --effect: hover 1s linear infinite;
+  }
+
+#loading-animation {
+    display: grid;
+    grid-template-columns: repeat(7,.05fr);
+    width: 100%;
+    height: 100vh;
+    background: black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  #loading-animation > p {
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 4em;
+    font-family: arial;
+    font-weight: 600;
+    transform: scale(.5);
+    color: #121212;
+    -webkit-text-stroke: 2px gray;
+  }
+  
+  #loading-animation >p:nth-child(1) {
+    animation: var(--effect);
+  }
+  
+  #loading-animation >p:nth-child(2) {
+    animation: var(--effect) .125s;
+  }
+  
+  #loading-animation >p:nth-child(3) {
+    animation: var(--effect) .25s;
+  }
+  
+  #loading-animation >p:nth-child(4) {
+    animation: var(--effect) .375s;
+  }
+  
+  #loading-animation >p:nth-child(5) {
+    animation: var(--effect) .5s;
+  }
+  
+  #loading-animation >p:nth-child(6) {
+    animation: var(--effect) .675s;
+  }
+  
+  #loading-animation >p:nth-child(7) {
+    animation: var(--effect) .75s;
+  }
+  
+  @keyframes hover {
+    0% {
+      transform: scale(.5);
+      color: #121212;
+      -webkit-text-stroke: 2px gray;
+    }
+  
+    20% {
+      transform: scale(1);
+      color: pink;
+      -webkit-text-stroke: 3px red;
+      filter: drop-shadow(0 0 1px black)drop-shadow(0 0 1px black)drop-shadow(0 0 3px red)drop-shadow(0 0 5px red)hue-rotate(10turn);
+    }
+  
+    50% {
+      transform: scale(.5);
+      color: #121212;
+      -webkit-text-stroke: 2px gray;
+    }
+  }
+   */
+
+
+   /* apps css */
+   /* calculator */
+
+   .calc-container{
+    display: flex;
+    flex-direction: column;
+    height: 74vh;
+    width: fit-content;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #243441;
+    border-radius: 10px;
+}
+
+.display-calculation{
+    width: 100%;
+    height: 10rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    grid-template-rows: 5fr 1fr ;
+    box-sizing: border-box;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    text-align: end;
+}
+
+.pre-results{
+    font-size: 2.5rem;
+}
+
+.calculations{
+    font-size: 1rem;
+    color: #757e89;
+}
+
+.num-btn{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem 1rem 1rem;
+    border-top: 1px solid #757e89;
+}
+
+.same-style{
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    font-size: 1rem;
+    border: none;
+    background-color: #243441;
+    width: 3rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 1px #51E1ED;
+}
+
+#clear,#percent,.multiply,.divide,.add,.minus,#delete{
+    color: #ee802d;
+    font-size: 1.5rem;
+}
+
+#equal{
+    grid-column: 3/5;
+    border-radius: 5px;
+    background:#ee802d;
+    width: 100%;
+    height: 3rem;
+    box-shadow: none;
+}
+
+#equal:hover{
+    background-color: #055023;
+}
+
+.same-style:hover{
+    font-size: 1.7rem;
+    transition: ease-in-out;
+    transition-duration: 500ms;
+}
+
+#clear:hover,#percent:hover,.multiply:hover,.divide:hover,.add:hover,.minus:hover,#delete:hover{
+    color: white;
+    background-color: #ee802d;
+    transition: ease-in-out;
+    transition-duration: 300ms;
+    box-shadow: none;
+}
+/* calculator design end */
+/* hover effect */
+#submit-link:hover,.app:hover,#mode-selector:hover,.change-admin:hover,.extra:hover,.add:hover{
+    background-color: black;
+    color: white;
+    transition: ease 0.5s;
+    cursor: pointer;
+}

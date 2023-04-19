@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,1,-50..200" />
+	<link rel="stylesheet" href="./index.css">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+		<div class="personal-info">
+			<img src="./my photo.jpg" alt="Admin img" id="admin-img">
+			<p class="admin-name"></p>
+		</div>
+		<div class="time-links">
+			<p id="current-time">Hi! <span id="name"></span></p>
+			<div class="add-links">
+				<div class="link">
+					<span class="material-symbols-outlined add" id="create-link">
+						add
+					</span>
+					<p class="link-name">New Link</p>
+				</div>
+			</div>
+		</div>
+		<div class="weather">
+			<p class="weather-temp"></p>
+			<span class="material-symbols-outlined weather-sign">
+				cloudy_snowing
+			</span>
+			<p class="place"></p>
+		</div>
+		<div class="apps">
+			<span class="material-symbols-outlined" id="open-apps">
+				apps
+			</span>
+			<span class="material-symbols-outlined" id="setting">
+				settings
+			</span>
+		</div>
+		<div class="others">
+			<button class="extra" id="today's Hot">Today's Hot</button>
+			<button class="extra" id="sports">Sports</button>
+			<button class="extra" id="gaming">Gaming</button>
+			<button class="extra" id="entertainment">Entertainment</button>
+			<button class="extra" id="business">Business</button>
+			<button class="extra" id="health">Health</button>
+			<button class="extra" id="politics">Politics</button>
+			<button class="extra" id="science">Science</button>
+			<button class="extra more" id="more">
+				<span class="material-symbols-outlined" id="more">
+				more_horiz
+				</span></button>
+		</div>
+    </div>
+
+	<!-- extra html -->
+	<div class="clickapps">
+		<div class="app" id="basketball-counter">
+			<span id="app-icon" class="material-symbols-outlined">
+			sports_basketball
+			</span>
+			<p class="app-name">Basketball Counter</p>
+		</div>
+		<div class="app" id="blackjack">
+			<span  id="app-icon" class="material-symbols-outlined">
+				style
+			</span>
+			<p class="app-name">Blackjack</p>
+		</div>
+		<div class="app" id="breakout">
+			<span id="app-icon" class="material-symbols-outlined">
+				grading
+			</span>
+			<p class="app-name">Breakout</p>
+		</div>
+		<div class="app" id="calculator">
+			<i  id="app-icon"class="fa-solid fa-calculator"></i>
+			<p class="app-name">Calculator</p>
+		</div>
+		<div class="app" id="chrome-extension">
+			<span  id="app-icon" class="material-symbols-outlined">
+				calculate
+				</span>
+			<p class="app-name">Chrome Extension</p>
+		</div>
+		<div class="app" id="color-pallete">
+			<span  id="app-icon"class="material-symbols-outlined">
+				palette
+			</span>
+			<p class="app-name">Color Scheme Generator</p>
+		</div>
+		<div class="app" id="food-ordering-app">
+			<span  id="app-icon"class="material-symbols-outlined">
+				lunch_dining
+			</span>
+			<p class="app-name">Food Odering App</p>
+		</div>
+		<div class="app" id="instagram-clone">
+			<i  id="app-icon" class="fa-brands fa-instagram"></i>
+			<p class="app-name">Instagram Clone</p>
+		</div>
+		<div class="app" id="memory-game">
+			<span  id="app-icon"class="material-symbols-outlined">
+			memory
+			</span>
+			<p class="app-name">Memory Game</p>
+		</div>
+		<div class="app" id="menu">
+			<span  id="app-icon" class="material-symbols-outlined">
+			menu_book
+			</span><p class="app-name">Menu</p>
+		</div>
+		<div class="app" id="mylearning-journal">
+			<i  id="app-icon"class="fa-solid fa-book"></i>
+			<p class="app-name">My learning Journey</p>
+		</div>
+		<div class="app" id="movie">
+			<i  id="app-icon"class="fa-solid fa-video"></i>
+			<p class="app-name">Movie</p>
+		</div>
+		<div class="app" id="password-generator">
+			<span  id="app-icon"class="material-symbols-outlined">
+			enhanced_encryption
+			</span>
+			<p class="app-name">Password Generator</p>
+		</div>
+		<div class="app" id="tindog">
+			<span  id="app-icon"class="material-symbols-outlined">
+			pets
+			</span>
+			<p class="app-name">Tindog</p>
+		</div>
+		<div class="app" id="twitter-clone">
+			<i  id="app-icon"class="fa-brands fa-twitter"></i>
+			<p class="app-name">Twitter Clone</p>
+		</div>
+		<div class="app" id="unit-converter">
+			<i  id="app-icon"class="fa-solid fa-cash-register"></i>
+			<p class="app-name">Unit Converter</p>
+		</div>
+		<div class="app" id="wizard-game">
+			<i  id="app-icon"class="fa-solid fa-hat-wizard"></i> 
+			<p class="app-name">Wizard Game</p>
+		</div>
+	</div>
+	<div class="settings-optn">
+		<button id="mode-selector" type="button">light Mode </button>
+		<button class="change-admin">Change-admin</button>
+	</div>
+
+	<div class="provide-link">
+		<label for="link-name">Name:</label>
+		<input type="text" id="link-name" name="name" placeholder="Name">
+		<label for="link-url">Url:</label>
+		<input type="url" id="link-url" name="url" placeholder="Type the url">
+		<input type="submit" id="submit-link" value="Create">
+	</div>
+
+	<div class="news-container">
+		<div class="news-box-head">
+			<p class="title-content"></p>
+			<span class="material-symbols-outlined" id="news-box-close">
+				close
+				</span>
+		</div>
+		<div class="news-grid"></div>
+	</div>
+
+	<div class="apps-container">
+		<div class="app-box-head">
+			<p class="app-title"></p>
+			<span class="material-symbols-outlined" id="app-box-close">
+				close
+			</span>
+		</div>
+		<div class="app-render"></div>
+	</div>
+	
+	<div class="more-optn"></div>
+	<!-- <div id="loading-animation">
+		<p>l</p>
+		<p>o</p>
+		<p>a</p>
+		<p>d</p>
+		<p>i</p>
+		<p>n</p>
+		<p>g</p>
+	  </div> -->
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
